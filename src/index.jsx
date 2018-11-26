@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './CSS/index.css';
-import FrontPage from './FrontPage';
+import App from './App';
+import {BrowserRouter} from "react-router-dom";
 
-ReactDOM.render(<FrontPage />, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));

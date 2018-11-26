@@ -1,4 +1,14 @@
 body {
     background-image: url("background.jpeg");
+    background-size: cover;
+}
 
+.navBar {
+    overflow: hidden;
+    background-color: rgba(207, 255, 135, 0.9);
+    float: left;
+    width: 2500px;;
+    left: 0;
+    top: 0;
+    position: fixed;
 }

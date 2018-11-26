@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './CSS/FrontPage.css';
 
 
-class FrontPage extends Component {
+class Ingredients extends Component {
     render() {
         return (
-            <div className="FrontPage">
+            <div className="App">
+                Hej
             </div>
         );
     }
 }
 
-export default FrontPage;
+export default Ingredients;
