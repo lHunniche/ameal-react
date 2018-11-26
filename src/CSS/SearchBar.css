@@ -1,0 +1,21 @@
+input[type=text] {
+    text-decoration: none;
+    width: 350px;
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.7px solid white;
+    color: white;
+}
+::placeholder{
+    color:white;
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+.searchContainer {
+    margin-top: 3%;
+    margin-left: 2%;
+}
