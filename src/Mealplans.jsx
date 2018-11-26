@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import './CSS/Ingredients.css';
+import './CSS/Mealplans.css';
 
 
-class Ingredients extends Component {
+class Mealplans extends Component {
     render() {
         return (
             <div className="App">
-                Du er på Ingredienser!
+                Du er på Madplaner!
             </div>
         );
     }
 }
 
-export default Ingredients;
+export default Mealplans;

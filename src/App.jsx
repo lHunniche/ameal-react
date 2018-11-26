@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import NavigationBar from './NavigationBar';
-import CurrentPage from './CurrentPage';
+import PageNavigator from './PageNavigator';
 
 class App extends Component {
 
     render() {
-        return(
+        return (
             <div className='container-fluid'>
                 <NavigationBar/>
-                <CurrentPage />
+                <PageNavigator/>
             </div>
         );
     }
