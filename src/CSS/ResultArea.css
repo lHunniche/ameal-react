@@ -1,0 +1,53 @@
+.result-container {
+    display: grid;
+    grid-auto-rows: 220px;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: repeat(auto-fill, 2fr);
+    width: 90%;
+    height: 40vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 5%;
+    margin-top: 1.5%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.searchIngredient {
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30pt;
+    font-family: 'Pacifico', cursive;
+    margin: 5px;
+    color: #FFF;
+    cursor: pointer;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.infoContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(4, 2fr);
+}
+
+.ingredientInfoName {
+    font-family: 'Pacifico', cursive;
+    font-size: 20pt;
+    text-align: center;
+    margin: 0px;
+    margin-left: 50px;
+}
+
+.ingredientInfoAmount {
+    font-family: 'Pacifico', cursive;
+    font-size: 20pt;
+    text-align: center;
+    margin: 0px;
+    margin-right: 50px;
+}
+
+.searchIngredient:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
