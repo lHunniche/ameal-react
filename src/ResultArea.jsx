@@ -1,25 +1,33 @@
 import React, {Component} from 'react';
 import './CSS/ResultArea.css';
-import ResultItem from "./ResultItem";
 
 
 class ResultArea extends Component {
-    constructor(props) {
-        super(props);
-    }
+
+
 
     render() {
-        // console.log(this.props.content);
+
+        if (this.props.searchResult) {
+            return (
+                <div className="result-container">
+                    {
+                        this.props.searchResult.map((resultItem) => (
+                            <div className="searchResult" key={resultItem.name}> {resultItem.name} </div>
+                        ))
+                    }
+
+                </div>
+            );
+        }
 
         return (
             <div className="result-container">
-                {
-                    this.state.content.map((item) => (
-                        <ResultItem key={item.name} name={item.name}/>
-                    ))
-                }
+
             </div>
         );
+
+
     }
 }
 

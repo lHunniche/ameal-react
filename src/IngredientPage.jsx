@@ -50,7 +50,7 @@ class IngredientPage extends Component {
                 <div className="searchContainer">
                     <input ref="searchBar" type="text" placeholder="Søg efter ingredienser..." onKeyPress={this.handleSearch}/>
                 </div>
-                <ResultArea content={this.showResult()}/>
+                <ResultArea searchResult={this.showResult()}/>
             </div>
         );
     }
