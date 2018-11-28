@@ -7,7 +7,13 @@ import ResultArea from "./ResultArea";
 class IngredientPage extends Component {
     constructor(probs) {
         super(probs);
-        this.state = {items: null}
+        this.state = {
+            items: null,
+        }
+    }
+
+    showResult = () => {
+        return this.state.items;
     }
 
 
@@ -25,9 +31,9 @@ class IngredientPage extends Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        items: result.data
+                        items: result.data,
+
                     });
-                    console.log(this.state.items);
                 },
                 (error) => {
                     this.setState({
@@ -44,7 +50,7 @@ class IngredientPage extends Component {
                 <div className="searchContainer">
                     <input ref="searchBar" type="text" placeholder="Søg efter ingredienser..." onKeyPress={this.handleSearch}/>
                 </div>
-                <ResultArea/>
+                <ResultArea content={this.showResult()}/>
             </div>
         );
     }

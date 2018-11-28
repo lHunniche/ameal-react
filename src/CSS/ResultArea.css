@@ -9,13 +9,13 @@
     overflow-x: hidden;
     margin-left: 5%;
     margin-top: 1.5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
 }
 .searchIngredient {
     border: 1px solid white;
     border-radius: 5px;
     text-align: center;
-    font-size: 30pt;
+    font-size: 30px;
     font-family: 'Pacifico', cursive;
     margin: 5px;
     color: #FFF;
@@ -33,18 +33,17 @@
 
 .ingredientInfoName {
     font-family: 'Pacifico', cursive;
-    font-size: 20pt;
+    font-size: 22px;
     text-align: center;
-    margin: 0px;
-    margin-left: 50px;
+    margin-left: 20%;
+
 }
 
 .ingredientInfoAmount {
     font-family: 'Pacifico', cursive;
-    font-size: 20pt;
+    font-size: 22px;
     text-align: center;
-    margin: 0px;
-    margin-right: 50px;
+    margin-right: 20%;
 }
 
 .searchIngredient:hover {

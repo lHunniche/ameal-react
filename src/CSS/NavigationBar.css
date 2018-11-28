@@ -2,8 +2,12 @@
     font-family: 'Tenor Sans', sans-serif;
 }
 
+.navbar navbar-default {
+    /*background-color: rgba(207, 255, 135, 1) !important;*/
+}
+
 #navbar-container {
-    background-color: rgba(207, 255, 135, 0.9);
+    background-color: rgba(207, 255, 135, 1) !important;
 }
 
 #navbar-container > ul li {
