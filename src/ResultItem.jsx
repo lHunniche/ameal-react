@@ -1,14 +1,31 @@
 import React, {Component} from 'react';
 import './CSS/ResultItem.css';
+import ResultIngredient from "./ResultIngredient";
+import ResultRecipe from "./ResultRecipe";
 
 
 class ResultItem extends Component {
 
     render() {
+        console.log(this.props);
+        if(this.props.type === "ingredient")
+        {
+            return (
+                <ResultIngredient {...this.props}/>
+            )
+        }
+        else if(this.props.type === "recipes")
+        {
+            return (
+                <ResultRecipe {...this.props}/>
+            )
+        }
+
         return (
-            <div className="ingredient">
-            </div>
-        );
+            <div>Unhandled Type Error</div>
+        )
+
+
     }
 }
 

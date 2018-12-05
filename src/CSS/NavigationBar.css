@@ -2,18 +2,22 @@
     font-family: 'Tenor Sans', sans-serif;
 }
 
-.navbar navbar-default {
-    /*background-color: rgba(207, 255, 135, 1) !important;*/
+.navbar.navbar-default {
+    border: none;
 }
 
 #navbar-container {
     background-color: rgba(207, 255, 135, 1) !important;
-}
+  }
 
 #navbar-container > ul li {
     border-left: 0.5px solid rgba(255, 220, 200, 0.8);
 
 }
+
+.nav.navbar-nav {
+}
+
 
 .navbar-brand {
     background-color: #50312f !important;
@@ -25,22 +29,16 @@
 
 .navbar a {
     color: rgb(4, 135, 0) !important;
-    padding: 14px 16px !important;
     font-family: 'Roboto', sans-serif !important;
     font-size: 30px !important;
-    transition: 0.5s !important;
 
 }
 
 .navbar a:hover {
     background-color: #3f6c45 !important;
     color: rgba(228, 234, 140, 5) !important;
+    transition: 0.5s !important;
 }
 
-/*.navbar a.active {*/
-    /*background-color: #50312f !important;*/
-    /*font-size: 30px !important;*/
-    /*border-left: none !important;*/
-    /*color: white !important;*/
-/*}*/
+
 

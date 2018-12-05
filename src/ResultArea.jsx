@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import './CSS/ResultArea.css';
+import ResultItem from "./ResultItem";
 
 
 class ResultArea extends Component {
-
-
 
     render() {
 
@@ -13,7 +12,8 @@ class ResultArea extends Component {
                 <div className="result-container">
                     {
                         this.props.searchResult.map((resultItem) => (
-                            <div className="searchResult" key={resultItem.name}> {resultItem.name} </div>
+                            <ResultItem key={resultItem.name} type={this.props.type} {...resultItem} />
+                            // <div className="searchResult" key={resultItem.name}> {resultItem.name} </div>
                         ))
                     }
 
