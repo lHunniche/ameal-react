@@ -1,5 +1,6 @@
 {
   "name": "ameal-react",
+  "homepage": "https://lasse.ameal.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "production": "webpack -p --progress",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -23,5 +25,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
 }

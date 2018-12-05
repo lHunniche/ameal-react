@@ -15,6 +15,7 @@ class ResultIngredient extends Component {
             let result = this.props;
             return (
                 <div className="searchResult" onClick={this.handleClick}>{result.name}
+                <hr className="h-line"/>
                     <div className="infoContainer">
                         <p className="ingredientInfoName">Kalorier:</p>
                         <p className="ingredientInfoAmount">{result.calories}</p>

@@ -1,6 +1,6 @@
 .result-container {
     display: grid;
-    grid-auto-rows: 220px;
+    grid-auto-rows: 260px;
     grid-template-columns: repeat(4, 2fr);
     grid-template-rows: repeat(auto-fill, 2fr);
     width: 90%;
@@ -8,6 +8,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     margin-left: 5%;
-    margin-top: 1.5%;
+    margin-top: 0.8%;
     background-color: rgba(0, 0, 0, 0);
 }

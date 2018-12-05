@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './CSS/Ingredients.css';
 import './CSS/general.css';
 import ResultArea from "./ResultArea";
+import {searchIngredient} from "./WebCalls";
 
 
 class IngredientPage extends Component {
@@ -18,30 +19,10 @@ class IngredientPage extends Component {
 
 
     handleSearch = (event) => {
-        if(event.key !== 'Enter') {
-            return;
+        if(event.key === 'Enter') {
+            searchIngredient(this.refs.searchBar.value, this);
         }
-        let rootUrl = "https://ameal.io:8080/";
-        let token = "TOKEN@1";
-        let searchParam = this.refs.searchBar.value;
-        let url = rootUrl + "ingredients/byName/" + searchParam + "?applicationToken=" + token;
-        fetch(url)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        items: result.data,
 
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
     }
 
     render() {

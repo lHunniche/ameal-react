@@ -13,7 +13,6 @@ class ResultArea extends Component {
                     {
                         this.props.searchResult.map((resultItem) => (
                             <ResultItem key={resultItem.name} type={this.props.type} {...resultItem} />
-                            // <div className="searchResult" key={resultItem.name}> {resultItem.name} </div>
                         ))
                     }
 

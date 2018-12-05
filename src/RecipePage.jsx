@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './CSS/Recipes.css';
 import './CSS/general.css';
 import ResultArea from "./ResultArea";
+import {searchRecipe} from "./WebCalls";
 
 
 class RecipePage extends Component {
@@ -14,35 +15,14 @@ class RecipePage extends Component {
 
     showResult = () => {
         return this.state.items;
-    }
+    };
 
 
     handleSearch = (event) => {
-        if (event.key !== 'Enter') {
-            return;
+        if (event.key === 'Enter') {
+            searchRecipe(this.refs.searchBar.value, this);
         }
-        let rootUrl = "https://ameal.io:8080/";
-        let token = "TOKEN@1";
-        let searchParam = this.refs.searchBar.value;
-        let url = rootUrl + "recipes/byName/" + searchParam + "?applicationToken=" + token;
-        fetch(url)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        items: result.data,
-
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
-    }
+    };
 
     render() {
         return (
