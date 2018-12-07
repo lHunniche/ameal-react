@@ -1,0 +1,176 @@
+/** {*/
+    /*border: 1px solid black;*/
+/*}*/
+
+.outerPopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+
+}
+
+.innerPopup {
+    position: absolute;
+    left: 26%;
+    right: 26%;
+    top: 5%;
+    bottom: 2%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 2px gray;
+    display: inline-block;
+    overflow: auto;
+
+}
+
+.ingredient-name {
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    position: relative;
+    padding-bottom: 1%;
+}
+
+.ingredient-name:before {
+    content: "";
+    position: absolute;
+    width: 6%;
+    height: 1px;
+    bottom: 0;
+    left: 47%;
+    border-bottom: 4px solid #8c8399;
+}
+
+.popup-image {
+    float: right;
+    max-width: 50%;
+    max-height: 40vh;
+    margin-top: 3%;
+    padding-right: 2%;
+
+}
+
+.recipe-text {
+    margin-right: 50%;
+    word-wrap: break-word;
+    margin-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 17px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.popup-ingredient-list {
+    margin-top: 3%;
+
+}
+
+.image-text-wrapper {
+    display: inline-block;
+}
+
+.popup-ingredient-item {
+    margin-left: 5%;
+    font-size: 17px;
+    list-style-image: url("images/small_chefs_hat.png");
+    font-family: 'Hind Siliguri', sans-serif;
+    padding-bottom: 1%;
+
+}
+
+.ingredient-guide-wrapper {
+    background: #f7e1e1;
+    margin: 2%;
+    border-radius: 5px;
+    padding-bottom: 5%;
+    display: block;
+    overflow: auto;
+}
+
+.ingredient-seperator {
+    border-color: rgba(0, 0, 0, 0.5);
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 0;
+
+}
+
+.ingredient-tag {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 24px;
+    padding-top: 1%;
+    margin-left: 2.5%;
+    font-weight: 300;
+}
+
+.ingredient-wrapper {
+    width: 50%;
+}
+
+.guide-wrapper {
+    float: right;
+    width: 50%;
+}
+
+.guide-step {
+    /*font-family: 'Nanum Gothic', sans-serif;*/
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-right: 2%;
+    font-size: 17px;
+}
+
+.recipe_chef_hat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 5%;
+
+}
+
+.chef_hat_icon_wrapper {
+    width: 100%;
+}
+
+.recipe_info {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.plate_icon {
+    width: 40px;
+    display: inline;
+    margin-bottom: 1.5%;
+
+}
+
+.timer_icon {
+    width: 30px;
+    display: inline;
+    margin: 1%;
+    margin-top: 0.5%;
+}
+
+.people {
+    font-family: 'Hind Siliguri', sans-serif;
+    display: inline;
+    font-size: 16px;
+    margin: 1%;
+    margin-right: 5%;
+
+}
+
+.time {
+    font-family: 'Hind Siliguri', sans-serif;
+    display: inline;
+    font-size: 16px;
+
+}
