@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './CSS/Recipes.css';
 import './CSS/general.css';
 import ResultArea from "./ResultArea";
-import {searchRecipe} from "./WebCalls";
+import {searchAllRecipes, searchRecipe} from "./WebCalls";
+import SearchButton from "./SearchButton";
 
 
 class RecipePage extends Component {
@@ -24,9 +25,14 @@ class RecipePage extends Component {
         }
     };
 
+    seeAllRecipes = () => {
+        searchAllRecipes(this);
+    };
+
     render() {
         return (
             <div className="Recipes">
+                <SearchButton button_text="Se alle opskrifter" onClick={this.seeAllRecipes}/>
                 <div className="searchContainer">
                     <input ref="searchBar" type="text" placeholder="Søg efter opskrifter..." onKeyPress={this.handleSearch}/>
                 </div>

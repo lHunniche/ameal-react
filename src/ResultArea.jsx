@@ -11,8 +11,8 @@ class ResultArea extends Component {
             return (
                 <div className="result-container">
                     {
-                        this.props.searchResult.map((resultItem) => (
-                            <ResultItem key={resultItem.name} type={this.props.type} {...resultItem} />
+                        this.props.searchResult.map((resultItem, i) => (
+                            <ResultItem key={i} type={this.props.type} {...resultItem} />
                         ))
                     }
 

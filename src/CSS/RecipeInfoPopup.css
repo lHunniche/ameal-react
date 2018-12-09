@@ -52,6 +52,7 @@
     max-height: 40vh;
     margin-top: 3%;
     padding-right: 2%;
+    border-radius: 5px;
 
 }
 
@@ -155,16 +156,14 @@
 .timer_icon {
     width: 30px;
     display: inline;
-    margin: 1%;
-    margin-top: 0.5%;
+    margin: 0.5% 1% 1%;
 }
 
 .people {
     font-family: 'Hind Siliguri', sans-serif;
     display: inline;
     font-size: 16px;
-    margin: 1%;
-    margin-right: 5%;
+    margin: 1% 5% 1% 1%;
 
 }
 

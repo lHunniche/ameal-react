@@ -1,0 +1,43 @@
+/** {*/
+    /*border: 1px solid black;*/
+/*}*/
+
+.mealplan-container {
+    display: grid;
+    grid-auto-rows: 350px;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(auto-fill, 2fr);
+    width: 50%;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.recipe-container {
+    background-color: rgba(70, 79 ,70, 0.5);
+    margin: 2%;
+    border-radius: 10px;
+
+}
+
+.day {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 40px;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(70, 79 ,70, 0.8);
+
+    color: #2da32d;
+    text-shadow: 2px 2px black;
+}
+
+.cancel_icon {
+    width: 50px;
+}

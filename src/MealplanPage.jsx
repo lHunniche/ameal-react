@@ -1,19 +1,51 @@
 import React, {Component} from 'react';
 import './CSS/Mealplans.css';
-import ResultArea from "./ResultArea";
+import MealplanLister from "./MealplanLister";
+import MealplanViewer from "./MealplanViewer";
 
 
 class MealplanPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            hasSelectedMealplan: false,
+            selectedMealplan: [],
+        }
+    }
+
+    toggleMealplanSelected = (mealplan) => {
+        this.setState({
+            hasSelectedMealplan: true,
+            selectedMealplan: mealplan,
+        });
+    };
+
+    toggleMealplanDeselected = () => {
+        this.setState({
+            hasSelectedMealplan: false,
+            selectedMealplan: [],
+        })
+    };
+
+
+    componentDidMount() {
+        document.addEventListener("keydown", this.toggleMealplanDeselected, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this.toggleMealplanDeselected, false);
+    }
+
+
     render() {
         return (
             <div className="Mealplan">
-                <div className="searchContainer">
-                    <input ref="searchBar" type="text" placeholder="Søg efter madplaner..." onKeyPress={this.handleSearch}/>
-                </div>
-                <ResultArea type="ingredient"/>
-
+                <MealplanLister toggleMealplanSelected={this.toggleMealplanSelected}/>
+                <MealplanViewer selectedMealplan={this.state.selectedMealplan}
+                                hasSelectedMealplan={this.state.hasSelectedMealplan}/>
             </div>
         );
+
     }
 }
 

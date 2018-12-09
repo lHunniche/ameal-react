@@ -7,7 +7,6 @@ import ResultRecipe from "./ResultRecipe";
 class ResultItem extends Component {
 
     render() {
-        console.log(this.props);
         if(this.props.type === "ingredient")
         {
             return (

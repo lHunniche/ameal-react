@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import './CSS/Ingredients.css';
 import './CSS/general.css';
 import ResultArea from "./ResultArea";
-import {searchIngredient} from "./WebCalls";
+import {searchAllIngredients, searchIngredient} from "./WebCalls";
+import SearchButton from "./SearchButton";
+import SearchField from "./SearchField";
 
 
 class IngredientPage extends Component {
@@ -18,19 +20,26 @@ class IngredientPage extends Component {
     }
 
 
-    handleSearch = (event) => {
+    handleSearch = (event, searchParam) => {
         if(event.key === 'Enter') {
-            searchIngredient(this.refs.searchBar.value, this);
+            searchIngredient(searchParam, this);
         }
 
     }
 
+    seeAllIngredients = () => {
+        console.log("klik klik");
+        searchAllIngredients(this);
+    };
+
     render() {
         return (
             <div className="Ingredients">
-                <div className="searchContainer">
-                    <input ref="searchBar" type="text" placeholder="Søg efter ingredienser..." onKeyPress={this.handleSearch}/>
-                </div>
+                <SearchButton button_text="Se alle ingredienser" onClick={this.seeAllIngredients}/>
+                {/*<div className="searchContainer">*/}
+                    {/*<input className="search-bar" ref="searchBar" type="text" placeholder="Søg efter ingredienser..." onKeyPress={this.handleSearch}/>*/}
+                {/*</div>*/}
+                <SearchField placeholder="Søg efter ingredienser..." onKey={this.handleSearch}/>
                 <ResultArea searchResult={this.showResult()} type="ingredient"/>
             </div>
         );
