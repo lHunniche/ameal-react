@@ -8,6 +8,7 @@ class SearchField extends Component {
         super(props);
         this.state = {
             searchParam: "",
+            onKey: this.props.onKey,
         }
     }
 
@@ -18,8 +19,8 @@ class SearchField extends Component {
         });
     };
 
-    getInputValue = () => {
-        return this.state.searchParam;
+    doSearch = (event) => {
+        this.state.onKey(event, this.state.searchParam);
     };
 
 
@@ -27,7 +28,7 @@ class SearchField extends Component {
     render() {
         return (
             <div className="searchContainer">
-                <input className="search-bar" type="text" placeholder={this.props.placeholder} onChange={event => this.updateInputValue(event)}/>
+                <input className="search-bar" type="text" placeholder={this.props.placeholder} onChange={event => this.updateInputValue(event)} onKeyPress={this.doSearch}/>
             </div>
         )
 
