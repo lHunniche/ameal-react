@@ -1,4 +1,7 @@
 export const searchIngredient = (searchParam, context) => {
+    if(isEmptyParameter(searchParam)) {
+        return;
+    }
     let rootUrl = "https://ameal.io:8080/";
     let token = "TOKEN@1";
     let url = rootUrl + "ingredients/byName/" + searchParam + "?applicationToken=" + token;
@@ -23,6 +26,9 @@ export const searchIngredient = (searchParam, context) => {
 };
 
 export const searchRecipe = (searchParam, context) => {
+    if(isEmptyParameter(searchParam)) {
+        return;
+    }
     let rootUrl = "https://ameal.io:8080/";
     let token = "TOKEN@1";
     let url = rootUrl + "recipes/byName/" + searchParam + "?applicationToken=" + token;
@@ -113,7 +119,6 @@ export const searchAllRecipes = (context) => {
         .then(
             (result) => {
                 sortArray(result.data);
-                console.log(result.data);
                 context.setState({
                     isLoaded: true,
                     items: result.data,
@@ -127,4 +132,8 @@ export const searchAllRecipes = (context) => {
                 });
             }
         )
+};
+
+const isEmptyParameter = (parameter) => {
+    return parameter === "";
 };

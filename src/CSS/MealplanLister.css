@@ -5,7 +5,7 @@
 
 
 .mealplans-container {
-    margin-left: 2%;
+    margin-left: 0%;
     margin-top: 8%;
     width: 30vw;
     display: inline-block;
@@ -34,7 +34,7 @@
     margin-bottom: 10%;
     margin-left: 2%;
     font-family: 'Hind Siliguri', sans-serif;
-    font-size: 40px;
+    font-size: 50px;
     color: goldenrod;
     text-shadow: 2px 2px black;
 }

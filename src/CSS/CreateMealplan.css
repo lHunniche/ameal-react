@@ -1,0 +1,19 @@
+.add-remove-container {
+    display: inline-block;
+}
+
+.check_mark_icon {
+    display: inline-block;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 100vh;
+    background-color: #2da32d;
+
+}
+
+.check-mark-wrapper {
+    display: inline-block;
+    float: right;
+    height: 10vh;
+    margin-right: 47.5vw;
+}

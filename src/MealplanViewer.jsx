@@ -7,6 +7,7 @@ class MealplanViewer extends Component {
 
 
     render() {
+        console.log(this.props);
         if (this.props.hasSelectedMealplan) {
             return (
                 <div className="mealplan-container">

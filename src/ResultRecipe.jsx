@@ -7,11 +7,13 @@ class ResultRecipe extends Component {
         super(props);
         this.state = {
             popupActive: false,
+            isAddable: this.props.isAddable,
+            isRemovable: this.props.isRemovable,
         }
     }
 
 
-    handleClick = () => {
+    handlePopupClick = () => {
         this.setState({
             popupActive: true,
         }, function () {
@@ -27,11 +29,19 @@ class ResultRecipe extends Component {
     };
 
     closePopupOnEscape = (event) => {
-        if(event.keyCode === 27) {
-            this.setState ({
-               popupActive: false,
+        if (event.keyCode === 27) {
+            this.setState({
+                popupActive: false,
             });
         }
+    };
+
+    handleAddClick = () => {
+        this.props.onClick(this.props);
+    };
+
+    handleRemoveClick = () => {
+       this.props.onClick(this.props.keyId);
     };
 
 
@@ -42,11 +52,45 @@ class ResultRecipe extends Component {
             let style = {
                 backgroundImage: 'url(' + this.props.image_url_large + ')',
             };
-            return (
-                <div className="searchResult" style={style} onClick={this.handleClick}>{result.name}
-                </div>
-            );
+
+            // This is for recipes that are addable. Used in CreateMealplan.
+            if (this.state.isAddable) {
+                return (
+                    <div className="searchResult-container">
+                        <div className="searchResultSelection" style={style} onClick={this.handlePopupClick}>{result.name}</div>
+                        <div className="image-container">
+                            <img className="add-recipe-icon" src={require("./CSS/images/add_icon.png")} alt="" onClick={this.handleAddClick}/>
+                        </div>
+                    </div>
+                )
+            }
+
+            // This is for recipes that are removable. Used in CreateMealplan.
+            else if(this.state.isRemovable)
+            {
+                return (
+                    <div className="searchResult-container">
+                        <div className="searchResultSelection" style={style} onClick={this.handlePopupClick}>{result.name}</div>
+                        <div className="image-container">
+                            <img className="remove-recipe-icon" src={require("./CSS/images/cancel_icon.png")} alt="" onClick={this.handleRemoveClick}/>
+                        </div>
+                    </div>
+                )
+            }
+
+            // This is for recipes that are neither addable or removable. Used for browsing recipes.
+            else
+            {
+                return (
+                    <div className="searchResultSelection" style={style} onClick={this.handlePopupClick}>{result.name}
+                    </div>
+                );
+            }
+
+
         }
+
+        // This is for when a recipe is clicked, and the popup is set to display instead.
         else if (this.state.popupActive) {
             return (
                 <RecipeInfoPopup {...this.props} removePopup={this.removePopup} removePopupWithEscape={this.closePopupOnEscape}/>

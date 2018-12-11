@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './CSS/Mealplans.css';
+import './CSS/MealplanPage.css';
 import MealplanLister from "./MealplanLister";
 import MealplanViewer from "./MealplanViewer";
 
@@ -40,6 +40,10 @@ class MealplanPage extends Component {
     render() {
         return (
             <div className="Mealplan">
+
+                <a href="/mealplans/add">
+                    <img className="add-mealplan-icon" src={require("./CSS/images/add_icon.png")} alt=""/>
+                </a>
                 <MealplanLister toggleMealplanSelected={this.toggleMealplanSelected}/>
                 <MealplanViewer selectedMealplan={this.state.selectedMealplan}
                                 hasSelectedMealplan={this.state.hasSelectedMealplan}/>

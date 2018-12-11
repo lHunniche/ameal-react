@@ -8,6 +8,7 @@
     cursor: pointer;
     text-shadow: 2px 2px #000000;
     background-color: rgba(0, 0, 0, 0.7);
+    margin: 1%;
 
 }
 .h-line {
@@ -37,6 +38,6 @@
 }
 
 .searchResult:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: all 0.2s;
 }

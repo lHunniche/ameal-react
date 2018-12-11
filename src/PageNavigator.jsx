@@ -5,6 +5,7 @@ import FrontPage from "./FrontPage";
 import IngredientPage from "./IngredientPage";
 import MealplanPage from "./MealplanPage";
 import RecipePage from "./RecipePage";
+import CreateMealplan from "./CreateMealplan";
 
 class PageNavigator extends Component {
     render() {
@@ -15,6 +16,7 @@ class PageNavigator extends Component {
                     <Route exact path='/mealplans' component={MealplanPage}/>
                     <Route exact path='/recipes' component={RecipePage}/>
                     <Route exact path='/ingredients' component={IngredientPage}/>
+                    <Route exact path='/mealplans/add' component={CreateMealplan}/>
                 </Switch>
             </div>
         );

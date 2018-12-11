@@ -1,0 +1,15 @@
+/** {*/
+    /*border: 1px solid black;*/
+/*}*/
+
+.add-mealplan-icon {
+    width: 5%;
+    vertical-align: top;
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: goldenrod;
+    border-radius: 100vh;
+    background-size: 80px 80px;
+    box-shadow: 4px 4px black;
+    cursor: pointer;
+}

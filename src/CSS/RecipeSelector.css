@@ -1,0 +1,31 @@
+/** {*/
+    /*border: 1px solid black;*/
+/*}*/
+.added-recipes {
+    display: grid;
+    grid-auto-rows: 340px;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(auto-fill, 2fr);
+    width: 45%;
+    height: 40vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 5%;
+    margin-top: 0.8%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.removed-recipes {
+    display: grid;
+    grid-auto-rows: 340px;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(auto-fill, 2fr);
+    width: 45%;
+    height: 40vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: 2%;
+    margin-top: 0.8%;
+    background-color: rgba(0, 0, 0, 0);
+    float: right;
+}

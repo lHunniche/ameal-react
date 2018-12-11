@@ -28,7 +28,6 @@ class IngredientPage extends Component {
     }
 
     seeAllIngredients = () => {
-        console.log("klik klik");
         searchAllIngredients(this);
     };
 
@@ -36,9 +35,6 @@ class IngredientPage extends Component {
         return (
             <div className="Ingredients">
                 <SearchButton button_text="Se alle ingredienser" onClick={this.seeAllIngredients}/>
-                {/*<div className="searchContainer">*/}
-                    {/*<input className="search-bar" ref="searchBar" type="text" placeholder="Søg efter ingredienser..." onKeyPress={this.handleSearch}/>*/}
-                {/*</div>*/}
                 <SearchField placeholder="Søg efter ingredienser..." onKey={this.handleSearch}/>
                 <ResultArea searchResult={this.showResult()} type="ingredient"/>
             </div>
