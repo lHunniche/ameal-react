@@ -137,3 +137,34 @@ export const searchAllRecipes = (context) => {
 const isEmptyParameter = (parameter) => {
     return parameter === "";
 };
+
+export const saveMealplan = (context, mealplan) => {
+    let rootUrl = "https://ameal.io:8080/";
+    let token = "TOKEN@1";
+    let url = rootUrl + "mealplans/saveMealplan?applicationToken=" + token;
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify(mealplan),
+    })
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result);
+                // context.setState({
+                //     isLoaded: true,
+                //     items: result.data,
+                //
+                // });
+            },
+            (error) => {
+                console.log(error);
+                // context.setState({
+                //     isLoaded: true,
+                //     error
+                // });
+            }
+        )
+};

@@ -3,17 +3,24 @@
 }
 
 .check_mark_icon {
-    display: inline-block;
-    height: 100%;
+    width: 6.5%;
+    float: left;
     cursor: pointer;
-    border-radius: 100vh;
-    background-color: #2da32d;
+    border-radius: 10vh;
+    background-color: rgba(4, 135, 0, 1);
+    margin-left: 19.75vw;
 
 }
-
-.check-mark-wrapper {
+.search-container {
     display: inline-block;
-    float: right;
-    height: 10vh;
-    margin-right: 47.5vw;
+    float: left;
+    margin-top: 1.5%;
+    margin-left: 1%;
+
+
+
 }
+
+/** {*/
+    /*border: 1px solid black;*/
+/*}*/

@@ -27,7 +27,7 @@ class SearchField extends Component {
 
     render() {
         return (
-            <div className="searchContainer">
+            <div className="searchFieldContainer">
                 <input className="search-bar" type="text" placeholder={this.props.placeholder} onChange={event => this.updateInputValue(event)} onKeyPress={this.doSearch}/>
             </div>
         )

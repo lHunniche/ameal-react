@@ -16,7 +16,8 @@ input[type=text]:focus{
     outline: none;
 }
 
-.searchContainer {
-    margin-top: 3%;
+.searchFieldContainer {
+    display: inline-block;
+    float: left;
     margin-left: 2%;
 }

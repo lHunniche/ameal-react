@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import "./CSS/CreateMealplan.css"
-import SearchButton from "./SearchButton";
 import SearchField from "./SearchField";
 import {searchAllRecipes, searchRecipe} from "./WebCalls";
 import RecipeSelector from "./RecipeSelector";
+import SearchButton from "./SearchButton";
+import CreateMealplanPopup from "./CreateMealplanPopup";
 
 
 class CreateMealplan extends Component {
@@ -12,6 +13,7 @@ class CreateMealplan extends Component {
         this.state = {
             items: [],
             selectedRecipes: [],
+            popupActive: false,
         }
     }
 
@@ -39,7 +41,7 @@ class CreateMealplan extends Component {
         let updatedList = this.state.selectedRecipes;
         updatedList.push(props);
         this.setState({
-           selectedRecipes: updatedList,
+            selectedRecipes: updatedList,
         });
     };
 
@@ -49,28 +51,41 @@ class CreateMealplan extends Component {
         this.setState({
             selectedRecipes: updatedList,
         });
-        // this.setState({
-        //     selectedRecipes: this.state.selectedRecipes.filter((recipe) => {
-        //         return keyId !== recipe.keyId;
-        //     })
-        // });
+    };
+
+    handleCreateClick = () => {
+        this.setState({
+            popupActive: true,
+        })
+    };
+
+    getIsPopupActive = () => {
+        return this.state.popupActive;
+    }
+
+    removePopupWithEscape = (event) => {
+        if (event.keyCode === 27) {
+            this.setState({
+                popupActive: false,
+            })
+        }
+
     };
 
     render() {
         return (
             <div className="root-container">
-                <div className="check-mark-wrapper">
-                    <img className="check_mark_icon" src={require("./CSS/images/check_mark_icon.svg")} alt=""/>
+                <div className="search-container">
+                    <SearchField placeholder="Søg og vælg opskrifter..." onKey={this.handleSearch}/>
+                    <SearchButton button_text="Se alle opskrifter" onClick={this.seeAllRecipes}/>
+                    <img className="check_mark_icon" src={require("./CSS/images/check_mark_icon.svg")} alt="" onClick={this.handleCreateClick}/>
                 </div>
 
-                <SearchButton button_text="Se alle opskrifter" onClick={this.seeAllRecipes}/>
-                <SearchField placeholder="Søg og vælg opskrifter..." onKey={this.handleSearch}/>
                 <div className="add-remove-container">
                     <RecipeSelector selections={this.showSelectedRecipes()} type="removable" onClick={this.removeRecipe}/>
                     <RecipeSelector searchResult={this.showResult()} type="addable" onClick={this.addRecipe}/>
                 </div>
-
-
+                <CreateMealplanPopup popupActive={this.getIsPopupActive()} recipes={this.state.selectedRecipes} removePopupWithEscape={this.removePopupWithEscape}/>
             </div>
         );
     }

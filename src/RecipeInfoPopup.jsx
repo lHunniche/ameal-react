@@ -24,10 +24,11 @@ class RecipeInfoPopup extends Component {
     };
 
 
-    componentDidMount(){
+    componentDidMount() {
         document.addEventListener("keydown", this.state.removePopupWithEscape, false);
     }
-    componentWillUnmount(){
+
+    componentWillUnmount() {
         document.removeEventListener("keydown", this.state.removePopupWithEscape, false);
     }
 

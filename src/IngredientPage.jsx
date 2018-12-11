@@ -34,8 +34,9 @@ class IngredientPage extends Component {
     render() {
         return (
             <div className="Ingredients">
-                <SearchButton button_text="Se alle ingredienser" onClick={this.seeAllIngredients}/>
                 <SearchField placeholder="Søg efter ingredienser..." onKey={this.handleSearch}/>
+                <SearchButton button_text="Se alle ingredienser" onClick={this.seeAllIngredients}/>
+
                 <ResultArea searchResult={this.showResult()} type="ingredient"/>
             </div>
         );

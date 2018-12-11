@@ -46,7 +46,6 @@ class ResultRecipe extends Component {
 
 
     render() {
-
         if (this.props && !this.state.popupActive) {
             let result = this.props;
             let style = {
@@ -64,7 +63,6 @@ class ResultRecipe extends Component {
                     </div>
                 )
             }
-
             // This is for recipes that are removable. Used in CreateMealplan.
             else if(this.state.isRemovable)
             {
@@ -77,7 +75,6 @@ class ResultRecipe extends Component {
                     </div>
                 )
             }
-
             // This is for recipes that are neither addable or removable. Used for browsing recipes.
             else
             {
@@ -86,22 +83,16 @@ class ResultRecipe extends Component {
                     </div>
                 );
             }
-
-
         }
-
         // This is for when a recipe is clicked, and the popup is set to display instead.
         else if (this.state.popupActive) {
             return (
                 <RecipeInfoPopup {...this.props} removePopup={this.removePopup} removePopupWithEscape={this.closePopupOnEscape}/>
             );
         }
-
         return (
             <div>ERROR: Selfdestructing in 5.. 4..</div>
         )
-
     }
 }
-
 export default ResultRecipe;

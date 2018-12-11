@@ -26,6 +26,7 @@ class MealplanLister extends Component {
 
     render() {
         if (this.state.isLoaded) {
+            console.log(this.state.items);
             return (
                 <div className="mealplans-container">
                     <h1 className="mealplan-tag">Mine madplaner</h1>

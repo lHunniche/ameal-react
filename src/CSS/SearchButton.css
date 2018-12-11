@@ -1,10 +1,8 @@
 
 .search-button {
     display: inline-block;
-    float: right;
-    margin-right: 65%;
+    float: left;
     height: 5vh;
-    width: auto;
     font-family: 'Hind Siliguri', sans-serif;
     background-color: rgba(207, 255, 135, 0.5);
     border-radius: 100vh;
