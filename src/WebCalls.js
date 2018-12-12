@@ -145,26 +145,24 @@ export const saveMealplan = (context, mealplan) => {
     fetch(url, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json; charset=utf-8",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(mealplan),
     })
         .then(res => res.json())
         .then(
             (result) => {
-                console.log(result);
-                // context.setState({
-                //     isLoaded: true,
-                //     items: result.data,
-                //
-                // });
+                context.setState({
+                    isLoaded: true,
+                    items: result.data,
+
+                });
             },
             (error) => {
-                console.log(error);
-                // context.setState({
-                //     isLoaded: true,
-                //     error
-                // });
+                context.setState({
+                    isLoaded: true,
+                    error
+                });
             }
         )
 };

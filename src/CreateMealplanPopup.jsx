@@ -11,6 +11,7 @@ class CreateMealplanPopup extends Component {
             currentNumberOfPeople: "2 personer",
             nameOfMealplan: "",
             recipes: this.props.recipes,
+            mealplanIsSaved: false,
         }
 
 
@@ -27,16 +28,13 @@ class CreateMealplanPopup extends Component {
 
     updateNumberOfPeople = (event) => {
         let value = event.target.value;
-        if(value === "1")
-        {
+        if (value === "1") {
             this.setState({
                 currentNumberOfPeople: "1 person",
             });
-        }
-        else
-        {
+        } else {
             this.setState({
-               currentNumberOfPeople: value + " personer",
+                currentNumberOfPeople: value + " personer",
             });
         }
 
@@ -50,23 +48,21 @@ class CreateMealplanPopup extends Component {
 
     saveMealplan = () => {
         let mealplan = {
-            "numberOfPeople": this.state.currentNumberOfPeople,
-            "name": this.state.nameOfMealplan,
-            "recipeList": this.state.recipes,
-
+            "name": (this.state.nameOfMealplan === "" ? "Madplan" : this.state.nameOfMealplan),
+            "numberOfPeople": parseInt(this.state.currentNumberOfPeople.split(" ")[0]),
+            "recipes": this.state.recipes,
         };
         saveMealplan(this, mealplan);
+        this.props.removePopup();
+        this.setState({
+            mealplanIsSaved: true,
+        })
+
     };
 
 
     render() {
-
-        if (!this.props.popupActive) {
-            return (
-                <div>
-                </div>
-            )
-        } else {
+        if (this.props.popupActive) {
             return (
                 <div className="outerPopupMealplan">
                     <div className="innerPopupMealplan">
@@ -82,6 +78,28 @@ class CreateMealplanPopup extends Component {
 
                 </div>
             );
+        }
+        else if(this.state.mealplanIsSaved)
+        {
+            return (
+                <div className="outerPopupSuccess">
+                    <div className="innerPopupSuccess">
+                        <p className="success-text">Din madplan er gemt! Velbekomme!</p>
+                        <img className="eating_gif" src={require("./CSS/images/eating.gif")} alt=""/>
+                        <a href="/mealplans">
+                            <img className="success-click" src={require("./CSS/images/check_mark_icon.svg")} alt=""/>
+                        </a>
+
+                    </div>
+                </div>
+            )
+        }
+        else {
+          return (
+              <div>
+
+              </div>
+          )
         }
 
 

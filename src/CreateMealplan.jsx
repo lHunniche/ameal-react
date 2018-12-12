@@ -59,9 +59,15 @@ class CreateMealplan extends Component {
         })
     };
 
+    removePopup = () => {
+        this.setState({
+            popupActive: false,
+        });
+    };
+
     getIsPopupActive = () => {
         return this.state.popupActive;
-    }
+    };
 
     removePopupWithEscape = (event) => {
         if (event.keyCode === 27) {
@@ -69,7 +75,6 @@ class CreateMealplan extends Component {
                 popupActive: false,
             })
         }
-
     };
 
     render() {
@@ -85,7 +90,7 @@ class CreateMealplan extends Component {
                     <RecipeSelector selections={this.showSelectedRecipes()} type="removable" onClick={this.removeRecipe}/>
                     <RecipeSelector searchResult={this.showResult()} type="addable" onClick={this.addRecipe}/>
                 </div>
-                <CreateMealplanPopup popupActive={this.getIsPopupActive()} recipes={this.state.selectedRecipes} removePopupWithEscape={this.removePopupWithEscape}/>
+                <CreateMealplanPopup popupActive={this.getIsPopupActive()} recipes={this.state.selectedRecipes} removePopupWithEscape={this.removePopupWithEscape} removePopup={this.removePopup}/>
             </div>
         );
     }
