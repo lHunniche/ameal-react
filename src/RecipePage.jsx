@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './CSS/Recipes.css';
+import './CSS/RecipePage.css';
 import './CSS/general.css';
 import ResultArea from "./ResultArea";
 import {searchAllRecipes, searchRecipe} from "./WebCalls";
@@ -19,7 +19,6 @@ class RecipePage extends Component {
         return this.state.items;
     };
 
-
     handleSearch = (event, searchParam) => {
         if (event.key === 'Enter') {
             searchRecipe(searchParam, this);
@@ -33,9 +32,9 @@ class RecipePage extends Component {
     render() {
         return (
             <div className="Recipes">
-
                 <SearchField placeholder="Søg efter opskrifter..." onKey={this.handleSearch}/>
                 <SearchButton button_text="Se alle opskrifter" onClick={this.seeAllRecipes}/>
+                <div className="spacer"/>
                 <ResultArea searchResult={this.showResult()} type="recipes"/>
             </div>
         );

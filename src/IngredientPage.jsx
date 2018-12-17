@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './CSS/Ingredients.css';
+import './CSS/IngredientPage.css';
 import './CSS/general.css';
 import ResultArea from "./ResultArea";
 import {searchAllIngredients, searchIngredient} from "./WebCalls";
@@ -36,7 +36,7 @@ class IngredientPage extends Component {
             <div className="Ingredients">
                 <SearchField placeholder="Søg efter ingredienser..." onKey={this.handleSearch}/>
                 <SearchButton button_text="Se alle ingredienser" onClick={this.seeAllIngredients}/>
-
+                <div className="spacer"/>
                 <ResultArea searchResult={this.showResult()} type="ingredient"/>
             </div>
         );

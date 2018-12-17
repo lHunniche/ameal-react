@@ -20,11 +20,14 @@ class MealplanPage extends Component {
         });
     };
 
-    toggleMealplanDeselected = () => {
-        this.setState({
-            hasSelectedMealplan: false,
-            selectedMealplan: [],
-        })
+    toggleMealplanDeselected = (event) => {
+        if (event.keyCode === 27) {
+            this.setState({
+                hasSelectedMealplan: false,
+                selectedMealplan: [],
+            })
+        }
+
     };
 
 
@@ -41,9 +44,10 @@ class MealplanPage extends Component {
         return (
             <div className="Mealplan">
 
-                <a href="/mealplans/add">
+                <a href={"/mealplans/add"}>
                     <img className="add-mealplan-icon" src={require("./CSS/images/add_icon.png")} alt=""/>
                 </a>
+
                 <MealplanLister toggleMealplanSelected={this.toggleMealplanSelected}/>
                 <MealplanViewer selectedMealplan={this.state.selectedMealplan}
                                 hasSelectedMealplan={this.state.hasSelectedMealplan}/>

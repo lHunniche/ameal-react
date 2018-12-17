@@ -26,6 +26,7 @@
     box-shadow: 2px 2px gray;
     display: inline-block;
     overflow: auto;
+    border-radius: 3px;
 
 }
 

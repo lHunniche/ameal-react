@@ -90,7 +90,7 @@ class CreateMealplan extends Component {
                     <RecipeSelector selections={this.showSelectedRecipes()} type="removable" onClick={this.removeRecipe}/>
                     <RecipeSelector searchResult={this.showResult()} type="addable" onClick={this.addRecipe}/>
                 </div>
-                <CreateMealplanPopup popupActive={this.getIsPopupActive()} recipes={this.state.selectedRecipes} removePopupWithEscape={this.removePopupWithEscape} removePopup={this.removePopup}/>
+                <CreateMealplanPopup popupActive={this.getIsPopupActive()} recipes={this.state.selectedRecipes} removePopupWithEscape={this.removePopupWithEscape} removePopup={this.removePopup    }/>
             </div>
         );
     }

@@ -84,7 +84,7 @@ class CreateMealplanPopup extends Component {
             return (
                 <div className="outerPopupSuccess">
                     <div className="innerPopupSuccess">
-                        <p className="success-text">Din madplan er gemt! Velbekomme!</p>
+                        <p className="success-text">Din madplan er gemt! God fornøjelse!</p>
                         <img className="eating_gif" src={require("./CSS/images/eating.gif")} alt=""/>
                         <a href="/mealplans">
                             <img className="success-click" src={require("./CSS/images/check_mark_icon.svg")} alt=""/>
