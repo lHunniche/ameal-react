@@ -31,7 +31,7 @@ class MealplanLister extends Component {
                 <div className="mealplans-container">
                     <h1 className="mealplan-tag">Mine madplaner</h1>
                     {
-                        [...this.state.items].reverse().map((mealplan, i) => (
+                        this.state.items.map((mealplan, i) => (
                             <div key={i} onClick={() => this.handleMealplanSelection(i)}>
                                 <img className="right_icon" src={require("./CSS/images/arrow_right.png")} alt=""/>
                                 <div className="mealplan-list-item" key={i}>{mealplan.name}</div>
