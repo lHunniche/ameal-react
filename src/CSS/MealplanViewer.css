@@ -1,7 +1,7 @@
 
 .mealplan-container {
     display: grid;
-    grid-auto-rows: 350px;
+    grid-auto-rows: 37vh;
     grid-template-columns: repeat(2, 2fr);
     grid-template-rows: repeat(auto-fill, 2fr);
     width: 50%;
